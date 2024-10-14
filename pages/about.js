@@ -46,7 +46,7 @@ const About = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20" data-aos="fade-up">
+      <section className="bg-primary text-white py-20" >
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About CollectPro</h1>
           <p className="text-xl md:text-2xl">
@@ -56,7 +56,7 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center">
             {/* Image */}
@@ -73,10 +73,10 @@ const About = () => {
             <div className="md:w-1/2 md:pl-12">
               <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Founded in [Year], CollectPro Banking Support Agency has been at the forefront of debt resolution and financial recovery services. Our dedicated team of experts works tirelessly to provide tailored solutions that align with our clients' unique financial situations.
+                Founded in [Year], CollectPro Banking Support Agency has been at the forefront of debt resolution and financial recovery services. Our dedicated team of experts works tirelessly to provide tailored solutions that align with our clients&rsquo; unique financial situations.
               </p>
-              <p className="text-gray-700 dark:text-gray-300">
-                We understand the challenges that come with managing debt and financial instability. Our mission is to alleviate these burdens by offering comprehensive services that not only resolve immediate financial issues but also pave the way for long-term financial health and success.
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                We understand the challenges that come with managing debt and financial instability.
               </p>
             </div>
           </div>
@@ -84,7 +84,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white dark:bg-gray-800" data-aos="fade-up">
+      <section className="py-20 bg-white dark:bg-gray-800" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Our Mission & Vision</h2>
@@ -104,7 +104,7 @@ const About = () => {
               <FaBullhorn className="text-primary w-12 h-12 mb-4" />
               <h3 className="text-2xl font-semibold mb-2">Our Vision</h3>
               <p className="text-gray-700 dark:text-gray-300">
-                To be the leading financial recovery agency recognized for our integrity, innovation, and unwavering commitment to our clients' success.
+                To be the leading financial recovery agency recognized for our integrity, innovation, and unwavering commitment to our clients&rsquo; success.
               </p>
             </div>
           </div>
@@ -112,7 +112,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Our Core Values</h2>
@@ -132,7 +132,7 @@ const About = () => {
               <FaHandshake className="text-primary w-12 h-12 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Compassion</h3>
               <p className="text-gray-700 dark:text-gray-300">
-                We approach every situation with empathy and understanding, prioritizing our clients' well-being.
+                We approach every situation with empathy and understanding, prioritizing our clients&rsquo; well-being.
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
@@ -147,7 +147,7 @@ const About = () => {
       </section>
 
       {/* Our Team */}
-      <section className="py-20 bg-white dark:bg-gray-800" data-aos="fade-up">
+      <section className="py-20 bg-white dark:bg-gray-800" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Meet Our Team</h2>
@@ -178,11 +178,11 @@ const About = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-primary text-white py-20" data-aos="fade-up">
+      <section className="bg-primary text-white py-20" >
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Partner with Us?</h2>
           <p className="text-xl md:text-2xl mb-8">
-            Whether you're facing financial challenges or looking to optimize your financial strategies, we're here to help.
+            Whether you&rsquo;re facing financial challenges or looking to optimize your financial strategies, we&rsquo;re here to help.
           </p>
           <Button variant="primary" href="/contact">
             Get in Touch

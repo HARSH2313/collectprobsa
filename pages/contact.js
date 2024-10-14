@@ -1,27 +1,12 @@
 // pages/contact.js
 
-import { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import { useForm } from "react-hook-form";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
-import Modal from "../components/ui/Modal";
-import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
-  // State for modal (if needed)
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedInfo, setSelectedInfo] = useState(null);
-
-  // React Hook Form setup
   const {
     register,
     handleSubmit,
@@ -29,10 +14,8 @@ const Contact = () => {
     reset,
   } = useForm();
 
-  // Form submission handler
   const onSubmit = async (data) => {
     try {
-      // Here you can handle form submission, e.g., send data to an API endpoint
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -42,14 +25,11 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        // Handle successful submission
         alert("Your message has been sent successfully!");
         reset();
       } else {
-        // Handle errors
-        alert(
-          "There was an error sending your message. Please try again later."
-        );
+        const errorData = await response.json();
+        alert(errorData.message || "There was an error sending your message. Please try again later.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -59,7 +39,6 @@ const Contact = () => {
 
   return (
     <>
-      {/* SEO and Meta Tags */}
       <Head>
         <title>Contact Us | CollectPro Banking Support Agency</title>
         <meta
@@ -68,21 +47,19 @@ const Contact = () => {
         />
       </Head>
 
-      {/* Hero Section */}
-      <section className="bg-primary text-white py-20" data-aos="fade-up">
+      <section className="bg-primary text-white py-20" >
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl md:text-2xl">
-            We're here to assist you with your financial needs.
+            We&rsquo;re here to assist you with your financial needs.
           </p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between">
-            {/* Address */}
             <Card className="flex items-center mb-8 md:mb-0">
               <FaMapMarkerAlt className="text-primary w-6 h-6 mr-4" />
               <div>
@@ -96,7 +73,6 @@ const Contact = () => {
               </div>
             </Card>
 
-            {/* Phone */}
             <Card className="flex items-center mb-8 md:mb-0">
               <FaPhoneAlt className="text-primary w-6 h-6 mr-4" />
               <div>
@@ -107,7 +83,6 @@ const Contact = () => {
               </div>
             </Card>
 
-            {/* Email */}
             <Card className="flex items-center">
               <FaEnvelope className="text-primary w-6 h-6 mr-4" />
               <div>
@@ -122,28 +97,22 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-white dark:bg-gray-800" data-aos="fade-up">
+      <section className="py-20 bg-white dark:bg-gray-800" >
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-semibold text-center mb-8">
               Send Us a Message
             </h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              {/* Name */}
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
-                >
+                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
                   Name<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   {...register("name", { required: "Name is required." })}
-                  className={`w-full px-4 py-2 border ${
-                    errors.name ? "border-red-500" : "border-gray-300"
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
+                  className={`w-full px-4 py-2 border ${errors.name ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
                   placeholder="Your Name"
                   aria-invalid={errors.name ? "true" : "false"}
                 />
@@ -154,12 +123,8 @@ const Contact = () => {
                 )}
               </div>
 
-              {/* Email */}
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
-                >
+                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
                   Email<span className="text-red-500">*</span>
                 </label>
                 <input
@@ -172,9 +137,7 @@ const Contact = () => {
                       message: "Please enter a valid email address.",
                     },
                   })}
-                  className={`w-full px-4 py-2 border ${
-                    errors.email ? "border-red-500" : "border-gray-300"
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
+                  className={`w-full px-4 py-2 border ${errors.email ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
                   placeholder="you@example.com"
                   aria-invalid={errors.email ? "true" : "false"}
                 />
@@ -185,21 +148,15 @@ const Contact = () => {
                 )}
               </div>
 
-              {/* Subject */}
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
-                >
+                <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
                   Subject<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="subject"
                   {...register("subject", { required: "Subject is required." })}
-                  className={`w-full px-4 py-2 border ${
-                    errors.subject ? "border-red-500" : "border-gray-300"
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
+                  className={`w-full px-4 py-2 border ${errors.subject ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
                   placeholder="Subject"
                   aria-invalid={errors.subject ? "true" : "false"}
                 />
@@ -210,20 +167,14 @@ const Contact = () => {
                 )}
               </div>
 
-              {/* Message */}
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
-                >
+                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
                   Message<span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="message"
                   {...register("message", { required: "Message is required." })}
-                  className={`w-full px-4 py-2 border ${
-                    errors.message ? "border-red-500" : "border-gray-300"
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
+                  className={`w-full px-4 py-2 border ${errors.message ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
                   placeholder="Your Message"
                   rows="5"
                   aria-invalid={errors.message ? "true" : "false"}
@@ -235,16 +186,14 @@ const Contact = () => {
                 )}
               </div>
 
-              {/* Submit Button */}
               <div>
                 <Button type="submit" variant="primary" className="w-full">
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </div>
 
-              {/* Success Message */}
               {isSubmitSuccessful && (
-                <p className="text-green-500 text-center">
+                <p className="text-green-500 text-center" aria-live="polite">
                   Thank you! Your message has been sent successfully.
                 </p>
               )}
@@ -253,8 +202,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Footer Call to Action */}
-      <section className="bg-primary text-white py-20" data-aos="fade-up">
+      <section className="bg-primary text-white py-20" >
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Resolve Your Financial Challenges?

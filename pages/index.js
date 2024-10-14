@@ -1,7 +1,6 @@
 // pages/index.js
 
 import Head from 'next/head';
-import Image from 'next/image';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { FaBalanceScale, FaBuilding, FaChartLine, FaFileContract } from 'react-icons/fa';
@@ -45,7 +44,7 @@ const Home = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20 text-center" data-aos="fade-up">
+      <section className="bg-primary text-white py-20 text-center" >
         <div className="container mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold">CollectPro Banking Support Agency</h1>
           <p className="text-xl md:text-2xl mt-4">
@@ -63,7 +62,7 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
@@ -75,7 +74,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white" data-aos="fade-up">
+      <section className="py-20 bg-white" >
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-10">Our Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -89,7 +88,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-6">Why Choose CollectPro</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
@@ -103,11 +102,10 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white" data-aos="fade-up">
+      <section className="py-20 bg-white" >
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-10">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Replace with dynamic testimonial data */}
             <Card
               title="Rahul Verma"
               description="CollectPro helped us recover a significant portion of our outstanding debts in a very short time."
@@ -133,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-primary text-white text-center" data-aos="fade-up">
+      <section className="py-20 bg-primary text-white text-center" >
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold mb-6">Ready to Get Started?</h2>
           <p className="text-lg max-w-3xl mx-auto mb-8">

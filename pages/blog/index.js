@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../../components/common/Header";
 import Footer from "../../components/common/Footer";
 import Link from "next/link";
-
+import Image from "next/image";
 const articles = [
   {
     title: "Top Strategies for Effective Debt Recovery",
@@ -62,9 +62,11 @@ const Blog = () => {
                 key={index}
                 className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition"
               >
-                <img
+<Image
                   src={article.image}
-                  alt={article.title}
+                  alt={`Image related to ${article.title}`}
+                  width={600} // Set appropriate width
+                  height={400} // Set appropriate height
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">

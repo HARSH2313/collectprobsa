@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Services = () => {
   return (
@@ -22,9 +23,9 @@ const Services = () => {
           <p className="text-xl mb-8">
             We offer a comprehensive range of banking support services to help your business thrive.
           </p>
-          <a href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded">
+          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded">
             Contact Us Today
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -37,7 +38,11 @@ const Services = () => {
             {/* Debt Recovery Service */}
             <div className="bg-white shadow-lg p-6 rounded-lg">
               <Image src="/images/icons/debt-recovery.svg" alt="Debt Recovery" width={64} height={64} />
-              <h3 className="text-xl font-semibold mt-4">Debt Recovery</h3>
+              <h3 className="text-xl font-semibold mt-4">
+                <Link href="/services/debt-recovery" className="hover:underline">
+                  Debt Recovery
+                </Link>
+              </h3>
               <p className="mt-4 text-gray-600">
                 Helping businesses recover outstanding debts efficiently with a focus on legal compliance and professionalism.
               </p>
@@ -46,7 +51,11 @@ const Services = () => {
             {/* Financial Planning Service */}
             <div className="bg-white shadow-lg p-6 rounded-lg">
               <Image src="/images/icons/financial-planning.svg" alt="Financial Planning" width={64} height={64} />
-              <h3 className="text-xl font-semibold mt-4">Financial Planning</h3>
+              <h3 className="text-xl font-semibold mt-4">
+                <Link href="/services/financial-planning" className="hover:underline">
+                  Financial Planning
+                </Link>
+              </h3>
               <p className="mt-4 text-gray-600">
                 Our expert advisors will assist you in making sound financial decisions to secure your business’s future.
               </p>
@@ -55,7 +64,11 @@ const Services = () => {
             {/* Legal Consultation Service */}
             <div className="bg-white shadow-lg p-6 rounded-lg">
               <Image src="/images/icons/legal-consultation.svg" alt="Legal Consultation" width={64} height={64} />
-              <h3 className="text-xl font-semibold mt-4">Legal Consultation</h3>
+              <h3 className="text-xl font-semibold mt-4">
+                <Link href="/services/legal-consultation" className="hover:underline">
+                  Legal Consultation
+                </Link>
+              </h3>
               <p className="mt-4 text-gray-600">
                 We provide tailored legal advice to help you navigate complex financial regulations and disputes.
               </p>
@@ -113,9 +126,9 @@ const Services = () => {
           <p className="text-xl mb-8">
             Contact us today to learn more about how our services can help your business succeed.
           </p>
-          <a href="/contact" className="bg-white text-blue-600 font-semibold py-3 px-6 rounded hover:bg-gray-100">
+          <Link href="/contact" className="bg-white text-blue-600 font-semibold py-3 px-6 rounded hover:bg-gray-100">
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
     </>

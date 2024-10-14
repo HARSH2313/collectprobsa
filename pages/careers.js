@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
-import { FaBriefcase, FaUserTie, FaLaptopCode } from 'react-icons/fa';
+import { FaBriefcase, FaUserTie, FaLaptopCode, FaHandshake } from 'react-icons/fa';
 
 const jobOpenings = [
   {
@@ -113,7 +113,7 @@ const Careers = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20" data-aos="fade-up">
+      <section className="bg-primary text-white py-20" >
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Careers at CollectPro</h1>
           <p className="text-xl md:text-2xl">
@@ -123,7 +123,7 @@ const Careers = () => {
       </section>
 
       {/* Introduction */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center">
             {/* Image */}
@@ -143,7 +143,7 @@ const Careers = () => {
                 At CollectPro, we believe in fostering a collaborative and inclusive environment where every team member can thrive. Our commitment to professional growth, coupled with our dedication to client success, makes us a leader in the financial recovery industry.
               </p>
               <p className="text-gray-700 dark:text-gray-300">
-                We offer competitive salaries, comprehensive benefits, and opportunities for advancement. If you're passionate about making a tangible impact and eager to grow your career, CollectPro is the place for you.
+                We offer competitive salaries, comprehensive benefits, and opportunities for advancement. If you&apos;re passionate about making a tangible impact and eager to grow your career, CollectPro is the place for you.
               </p>
             </div>
           </div>
@@ -151,7 +151,7 @@ const Careers = () => {
       </section>
 
       {/* Current Openings */}
-      <section className="py-20 bg-white dark:bg-gray-800" data-aos="fade-up">
+      <section className="py-20 bg-white dark:bg-gray-800" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Current Openings</h2>
@@ -189,15 +189,14 @@ const Careers = () => {
                 className="rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-2">{selectedJob.position}</h3>
+            <h3 className="text-xl font-semibold mb-2">{selectedJob.title}</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              **Department:** {selectedJob.department}
+              <strong>Department:</strong> {selectedJob.department}
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              **Location:** {selectedJob.location}
+              <strong>Location:</strong> {selectedJob.location}
             </p>
             <div className="prose dark:prose-dark">
-              {/* Render markdown or formatted content */}
               <div dangerouslySetInnerHTML={{ __html: markdownToHtml(selectedJob.detailedDescription) }} />
             </div>
             <div className="mt-6 text-center">
@@ -210,7 +209,7 @@ const Careers = () => {
       </section>
 
       {/* Application Process */}
-      <section className="py-20 bg-background" data-aos="fade-up">
+      <section className="py-20 bg-background" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Our Application Process</h2>
@@ -237,7 +236,7 @@ const Careers = () => {
               <FaBriefcase className="text-primary w-12 h-12 mb-4" />
               <h3 className="text-xl font-semibold mb-2">3. Onboarding</h3>
               <p className="text-gray-700 dark:text-gray-300">
-                Once selected, you'll go through our onboarding process to integrate you into the team.
+                Once selected, you&rsquo;ll go through our onboarding process to integrate you into the team.
               </p>
             </div>
           </div>
@@ -245,7 +244,7 @@ const Careers = () => {
       </section>
 
       {/* Company Culture & Benefits */}
-      <section className="py-20 bg-white dark:bg-gray-800" data-aos="fade-up">
+      <section className="py-20 bg-white dark:bg-gray-800" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Company Culture & Benefits</h2>
@@ -280,7 +279,7 @@ const Careers = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-primary text-white py-20" data-aos="fade-up">
+      <section className="bg-primary text-white py-20" >
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Join Us?</h2>
           <p className="text-xl md:text-2xl mb-8">
@@ -295,7 +294,7 @@ const Careers = () => {
   );
 };
 
-// Utility function to convert markdown to HTML (you can use a library like marked or remark)
+// Utility function to convert markdown to HTML
 const markdownToHtml = (markdown) => {
   // For simplicity, replace markdown headers and bold syntax with HTML
   let html = markdown

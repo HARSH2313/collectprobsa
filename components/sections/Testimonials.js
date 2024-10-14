@@ -1,4 +1,3 @@
-// components/sections/Testimonials.js
 import Image from 'next/image';
 
 const testimonials = [
@@ -37,20 +36,25 @@ const Testimonials = () => {
     <section className="py-20 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-12 text-text dark:text-white">What Our Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="flex items-start bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+            <div 
+              key={index} 
+              className="flex items-start bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
+            >
               <div className="w-16 h-16 relative mr-6">
                 <Image
                   src={testimonial.photo}
-                  alt={`${testimonial.clientName} Photo`}
+                  alt={`${testimonial.clientName} is a client`}
                   layout="fill"
                   objectFit="cover"
                   className="rounded-full"
                 />
               </div>
               <div>
-                <p className="text-gray-700 dark:text-gray-300 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-700 dark:text-gray-300 italic">
+                  &quot;{testimonial.quote}&quot;
+                </p>
                 <p className="mt-4 font-semibold text-text dark:text-white">{testimonial.clientName}</p>
                 <p className="text-gray-500 dark:text-gray-400">{testimonial.position} at {testimonial.company}</p>
               </div>

@@ -1,55 +1,51 @@
 // pages/_document.js
 
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import React from 'react';
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
-          {/* Meta Tags */}
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="description" content="CollectPro Banking Support Agency - Your Partner in Effective Debt Resolution and Financial Recovery." />
-          <meta name="keywords" content="Debt Resolution, Financial Recovery, NPA Management, Bank Enforcement, Legal Services, Loan Settlement, CollectPro" />
-          <meta name="author" content="CollectPro Banking Support Agency" />
-          
-          {/* Favicon */}
-          <link rel="icon" href="/favicon.ico" />
-
           {/* Preconnect to Google Fonts for performance */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 
-          {/* Google Fonts */}
+          {/* Import Google Fonts */}
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
 
-          {/* AOS CSS for animations */}
-          <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+          {/* Favicon */}
+          <link rel="icon" href="/favicon.ico" />
 
-          {/* Custom Styles */}
-          {/* If you have any additional global styles or scripts, include them here */}
+          {/* Meta Tags for SEO and Social Media */}
+          <meta
+            name="description"
+            content="CollectPro Banking Support Agency - Your Partner in Effective Debt Resolution and Financial Recovery."
+          />
+          <meta property="og:title" content="CollectPro Banking Support Agency" />
+          <meta
+            property="og:description"
+            content="Your Partner in Effective Debt Resolution and Financial Recovery."
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.collectpros.in" />
+          <meta property="og:image" content="https://www.collectpros.in/images/logo.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="CollectPro Banking Support Agency" />
+          <meta
+            name="twitter:description"
+            content="Your Partner in Effective Debt Resolution and Financial Recovery."
+          />
+          <meta name="twitter:image" content="https://www.collectpros.in/images/logo.png" />
+
+          {/* Add any additional head elements here */}
         </Head>
         <body className="bg-background text-text dark:bg-gray-900 dark:text-white">
           <Main />
           <NextScript />
-
-          {/* AOS JS for animations */}
-          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-          <script>
-            {`
-              AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false,
-              });
-            `}
-          </script>
         </body>
       </Html>
     );

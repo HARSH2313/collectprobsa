@@ -1,11 +1,9 @@
-// pages/why-choose-us.js
-
 import Head from 'next/head';
+import Link from 'next/link';
 
 const WhyChooseUs = () => {
   return (
     <>
-      {/* SEO Metadata */}
       <Head>
         <title>Why Choose Us | CollectPro Banking Support Agency</title>
         <meta
@@ -24,61 +22,57 @@ const WhyChooseUs = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-4">Unique Selling Propositions</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Unique Selling Proposition 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Customized Solutions</h3>
-              <p className="text-gray-600">
-                Every business is unique, and we tailor our services to meet your specific needs. Our customized strategies ensure effective outcomes that align with your goals.
-              </p>
-            </div>
-
-            {/* Unique Selling Proposition 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Client-Centric Approach</h3>
-              <p className="text-gray-600">
-                We build lasting relationships with our clients, providing ongoing support and regular updates throughout the process. Your success is our priority.
-              </p>
-            </div>
-
-            {/* Unique Selling Proposition 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Proven Track Record</h3>
-              <p className="text-gray-600">
-                Our history of successful debt resolution speaks for itself. With a high success rate, we are proud to have helped numerous businesses regain financial stability.
-              </p>
-            </div>
+            {[
+              {
+                title: "Customized Solutions",
+                description: "Every business is unique, and we tailor our services to meet your specific needs. Our customized strategies ensure effective outcomes that align with your goals."
+              },
+              {
+                title: "Client-Centric Approach",
+                description: "We build lasting relationships with our clients, providing ongoing support and regular updates throughout the process. Your success is our priority."
+              },
+              {
+                title: "Proven Track Record",
+                description: "Our history of successful debt resolution speaks for itself. With a high success rate, we are proud to have helped numerous businesses regain financial stability."
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
           </div>
 
           <h2 className="text-2xl font-semibold mt-12 mb-4">Client Testimonials</h2>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
-            <p className="text-gray-600 italic">
-              “Working with CollectPro transformed our approach to debt management. Their expertise and commitment made all the difference.” 
-            </p>
-            <p className="text-right text-gray-800 font-bold">— Rahul Verma, CEO of ABC Corp</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
-            <p className="text-gray-600 italic">
-              “The team’s transparency and dedication gave us peace of mind during a challenging time.” 
-            </p>
-            <p className="text-right text-gray-800 font-bold">— Anita Kapoor, Finance Director of XYZ Ltd</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
-            <p className="text-gray-600 italic">
-              “Their tailored solutions led to significant improvements in our cash flow. Highly recommended!” 
-            </p>
-            <p className="text-right text-gray-800 font-bold">— Sanjay Mehta, Owner of 123 Enterprises</p>
-          </div>
+          {[
+            {
+              quote: "Working with CollectPro transformed our approach to debt management. Their expertise and commitment made all the difference.",
+              author: "Rahul Verma, CEO of ABC Corp"
+            },
+            {
+              quote: "The team’s transparency and dedication gave us peace of mind during a challenging time.",
+              author: "Anita Kapoor, Finance Director of XYZ Ltd"
+            },
+            {
+              quote: "Their tailored solutions led to significant improvements in our cash flow. Highly recommended!",
+              author: "Sanjay Mehta, Owner of 123 Enterprises"
+            }
+          ].map((testimonial, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg mb-6">
+              <p className="text-gray-600 italic">{`“${testimonial.quote}”`}</p>
+              <p className="text-right text-gray-800 font-bold">— {testimonial.author}</p>
+            </div>
+          ))}
 
           <div className="text-center mt-12">
-            <a
+            <Link
               href="/contact"
               className="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition"
+              aria-label="Contact CollectPro Banking Support Agency"
             >
-              Get in Touch
-            </a>
+              Schedule Your Free Consultation
+            </Link>
           </div>
         </div>
       </section>
