@@ -1,0 +1,60 @@
+/* globals.css */
+
+/* Tailwind CSS Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global Styles */
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Change to your preferred font */
+  background-color: #f9fafb; /* Light gray background */
+  color: #374151; /* Dark gray text color */
+  line-height: 1.6; /* Improved line height */
+  margin: 0; /* Remove default body margin */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bold font for headings */
+}
+
+h1 {
+  font-size: 2.25rem; /* H1 size */
+}
+
+h2 {
+  font-size: 1.875rem; /* H2 size */
+}
+
+h3 {
+  font-size: 1.5rem; /* H3 size */
+}
+
+p {
+  margin-bottom: 1.25rem; /* Space between paragraphs */
+}
+
+/* Utility classes for margin and padding */
+.container {
+  max-width: 1200px; /* Maximum width for the main container */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Button Styles */
+button {
+  transition: background-color 0.3s ease; /* Smooth transition for buttons */
+}
+
+button:hover {
+  background-color: #2563eb; /* Change on hover */
+  color: white; /* Text color on hover */
+}
+
+/* Add additional global styles below as needed */
